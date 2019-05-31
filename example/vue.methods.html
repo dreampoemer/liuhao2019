@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>methods选项</title>
+</head>
+<body>
+    <div id="app">
+        {{num}} + <input type="number" v-model="newValue">
+        <br><br> 
+        <button @click="add">button</button>
+        <br><br>
+        <!-- 用.native修饰器来调用构造器里的add方法 -->
+        <btn @click.native="add"></btn>
+    </div>
+    <!-- 外部按钮 -->
+    <br><br>
+    <button onclick="app.add()">外部button</button>
+</body>
+<script src="../assets/js/vue.js"></script>
+<script>
+    // 自定义组件
+    var btnComponent ={
+        template:"<button>组件button</button>"
+    };
+    var app = new Vue({
+        el:"#app",
+        data:{
+            num:1,
+            newValue:0
+        },
+        components:{
+            "btn":btnComponent
+        },
+        methods:{
+            add:function(){
+                var newValue =parseInt(this.newValue);
+                if(newValue != 0){
+                    this.num += newValue;
+                }else{
+                    this.num++;
+                }
+               
+            }
+        }
+    });
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>component组件--props</title>
+    <style>
+    .red{color:red;}
+    .green{color:greenyellow;}
+    </style>
+</head>
+<body>
+    <div id="app">
+        <panda :here="where"></panda>
+    </div>
+</body>
+<script src="../assets/js/vue.js"></script>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            where:'siChuan'
+        },
+        components: {
+            "panda":{
+                template:`<h2 class='green'>panda is from {{here}}</h2>`,
+                props:['here']
+            }
+        }
+    });
+</script>
+</html>

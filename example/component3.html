@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <panda></panda>
+    </div>
+</body>
+<script src="../assets/js/vue.js"></script>
+<script>
+    // 注意：子组件应放在父组件之前定义
+    var cityComponent ={
+        template:`
+           <strong>siChuan of China</strong> 
+        `
+    };
+
+    var pandaComponent = {
+        template:`
+            <p>panda is from <city></city></p>
+        `,
+        components:{
+            "city":cityComponent
+        }
+    };
+
+    var app= new Vue({
+        el:'#app',
+        components: {
+            "panda":pandaComponent
+        }
+    });
+
+</script>
+</html>

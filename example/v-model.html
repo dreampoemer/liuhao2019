@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>v-model实例</title>
+</head>
+<body>
+    <div id="app">
+        <p>原始文本信息0：{{message}}!</p>
+        <!-- 修饰符 -->
+        <p>原始文本信息1：{{message1}}!</p>
+        <p>原始文本信息2：{{message2}}!</p>
+        <p>原始文本信息3：{{message3}}!</p>
+        0：<input type="text" v-model="message"><br><br>
+        1：<input type="text" v-model.lazy="message1"><br><br>
+        2：<input type="text" v-model.number="message2"><br><br>
+        3：<input type="text" v-model.trim="message3">
+        <hr>
+        <!-- 多选按钮绑定过一个值 -->
+        <input type="checkbox" v-model="isTrue">
+        <label for="isTrue">{{isTrue}}</label>
+        <hr>
+        <!-- 多选绑定数组 -->
+        <strong>已选择：{{all_names}}</strong>
+        <br>
+        <input type="checkbox" value="郑州" v-model="all_names">
+        <label for="">郑州</label>
+        <input type="checkbox" value="南京" v-model="all_names">
+        <label for="">南京</label>
+        <input type="checkbox" value="深圳" v-model="all_names">
+        <label for="">深圳</label>
+        <hr>
+        <!-- 单选选择 -->
+        您的性别：{{sex}}
+        <br>
+        <input type="radio" value="男" v-model="sex">
+        <label for="">男</label>
+        <input type="radio" value="女" v-model="sex">
+        <label for="">女</label>
+    </div>
+</body>
+<script src="../assets/js/vue.js"></script>
+<script>
+    var app = new Vue({
+        el:"#app",
+        data:{
+            message:"hello Vue",
+            message1:"hello Vue",
+            message2:"1234567890",
+            message3:"     hello Vue",
+            isTrue:true,
+            all_names:[],
+            sex:""
+        }
+    })
+</script>
+</html>

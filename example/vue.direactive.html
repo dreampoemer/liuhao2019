@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vue.directive 自定义指令</title>
+</head>
+<body>
+    <div id="app">
+        <strong v-liuhao="color">{{num}}</strong>
+        <br>
+        <button @click="add">click me to add</button>
+    </div>
+    <br>
+    <button onclick="unbind()">解除绑定</button>
+</body>
+<script src="../assets/js/vue.js"></script>
+<script>
+    function unbind(){
+        app.$destroy();
+    }
+    Vue.directive("liuhao",{
+        bind:function(el,binding){//被绑定
+            console.log("1--bind");
+            el.style="color:"+ binding.value;
+        },
+        inserted:function(){//绑定插入到节点
+            console.log("2--inserted");
+        },
+        update:function(){//组件更新
+            console.log("3--update");
+        },
+        componentUpdated:function(el,binding){//组件更新完成
+            let nowValue = parseInt(el.innerText);
+            console.log("4--componentUpdated");
+            //TODO 判断逻辑大于7代码未执行
+            if(nowValue < 4){
+                el.style = "color:red";
+            }else if(4 <= nowValue < 7){
+                el.style = "color:green";
+            }else{
+                el.style = "color:yellow";
+            }
+        },
+        unbind:function(){//解除绑定
+            console.log("5--unbind");
+        }
+    });
+    var app = new Vue({
+        el:'#app',
+        data:{
+            num:1,
+            color:"red"
+        },
+        methods:{
+            add:function(){
+                this.num++;
+            }
+        }
+    });
+</script>
+</html> 

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>extends扩展</title>
+</head>
+<body>
+    <div id="app">
+        *num*
+        <div><button @click="add">增加</button></div>
+    </div>
+</body>
+<script src="../assets/js/vue.js"></script>
+<script>
+    var extendsObj={
+        methods:{
+            add:function(){
+                console.log("我是拓展的add方法")
+            }
+        },
+        updated:function(){
+            console.log('我是扩展的updated方法');
+        }
+    };
+
+    var app = new Vue({
+        el:"#app",
+        data:{
+            num:10
+        },
+        methods:{
+            add:function(){
+                this.num++;
+                console.log("我是内部的add方法")
+            }
+        },
+        updated:function(){
+            console.log('我是内部的updated方法');
+        },
+        extends:extendsObj,
+        // delimiters的作用是改变我们插值的符号。Vue默认的插值是双大括号{{}}。但有时我们会有需求更改这个插值的形式。
+        delimiters:['*','*']
+
+    });
+   
+</script>
+</html>
