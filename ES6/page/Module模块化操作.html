@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Module模块化操作</title>
+    <link rel="stylesheet" href="code.css">
+</head>
+<body>
+    <pre>
+        <code>
+            模块功能主要由两个命令构成：
+            export和import。
+            export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。
+
+            //export.js
+            let a = '李白';
+            let b = 28;
+            let c = 'male';
+
+            export {
+                name as a,
+                age as b,
+                sex as c
+            }
+
+            export function add(v1,v2){
+                return v1 + v2;
+            }
+
+            //import.js
+            import {name,age,sex,add} from './export.js'
+            console.log(name,age,sex,add(1,2))
+        </code>
+    </pre>
+</body>
+</html>

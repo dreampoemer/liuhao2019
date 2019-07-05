@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>新的声明方式</title>
+    <link rel="stylesheet" href="./code.css">
+</head>
+<body>
+    ES6声明变量的六种方法，其中ES5只有1，2两种声明变量的方法。
+    <ol>
+        <li>var命令
+            <div class="code">
+                <pre>
+                    <code>
+                        var a=2;            
+                        {
+                        var a=3;
+                        }
+                        console.log(a);//3----var是全局声明的
+
+                        var a=2;
+                        {
+                        let a=3;
+                        }
+                        console.log(a);//2----let声明只在区块内起作用，外部是不可以调用的
+
+                        const a="JSPang";
+                        var a='技术胖';
+                        console.log(a);//报错：'Identifier 'a' has already been declared'。因为const声明的变量是不可改变的。
+                    </code>
+                </pre>
+            </div>
+        </li>
+        <li>function命令</li>
+        <li>let命令</li>
+        <li>const命令</li>
+        <li>import命令</li>
+        <li>class命令</li>
+    </ol>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>变量的解构声明</title>
+    <link rel="stylesheet" href="code.css">
+</head>
+<body>
+    以前，为变量赋值，我们只能直接指定值。比如下面的代码：
+    <pre>
+        <code>
+            let a=0;
+            let b=1;
+            let c=2;
+        </code>
+    </pre>
+    而现在我们可以用数组解构的方式来进行赋值。
+    <pre>
+        <code>
+            let  [a,b,c]=[1,2,3];
+        </code>
+    </pre>
+    <strong>解构的默认值：</strong>
+    <pre>
+        <code>
+            let [a,b="JSPang"]=['技术胖']
+            console.log(a+b); //控制台显示“技术胖JSPang”，a='技术胖'，b='JSPang'
+        </code>
+    </pre>
+    现在我们对默认值有所了解，需要注意的是undefined和null的区别。undefined相当于什么都没有，null相当于有值，但值为null。所以b并没有取默认值，而是解构成了null。
+    <pre>   
+        <code> 
+            let [a,b="JSPang"]=['技术胖',undefined];
+            console.log(a+b); //控制台显示“技术胖JSPang”
+
+
+            let [a,b="JSPang"]=['技术胖',null];
+            console.log(a+b); //控制台显示“技术胖null”
+        </code>
+    </pre>
+    <strong>圆括号的使用</strong>
+    <pre>
+        <code>
+            let foo;
+            {foo} ={foo:'JSPang'};
+            console.log(foo);//如果在解构之前就定义了变量，这时候你再解构会出现问题。
+
+            let foo;
+            ({foo} ={foo:'JSPang'});
+            console.log(foo); //控制台输出jspang
+        </code>
+    </pre>
+    <strong>字符串解构</strong>
+    <pre>
+        <code>
+            const [a,b,c,d,e,f]="JSPang";
+            console.log(a);
+            console.log(b);
+            console.log(c);
+            console.log(d);
+            console.log(e);
+            console.log(f);
+        </code>
+    </pre>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扩展运算符和rest运算符</title>
+    <link rel="stylesheet" href="code.css">
+</head>
+<body>
+        这节课我们学习扩展运算符和rest运算符，它们都是…（三个点）。它们可以很好的为我们解决参数和对象数组未知情况下的编程，让我们的代码更健壮和简洁。
+    <strong>扩展运算符的作用。下面看一个例子：</strong>
+    <pre>
+        <code>
+            let arr1=['www','jspang','com'];
+            let arr2=arr1;
+            console.log(arr2);
+            arr2.push('shengHongYu');
+            console.log(arr1);
+
+            控制台输出：
+            ["www", "jspang", "com"]
+            ["www", "jspang", "com", "shengHongYu"]
+
+            可以看到arr1被改变了，这是我们不想看到的。可以运用扩展运算符对代码进行改造。
+            let arr1=['www','jspang','com'];
+            let arr2=[...arr1];
+            console.log(arr2);
+            arr2.push('shengHongYu');
+            console.log(arr2);
+            console.log(arr1);
+
+            此时，控制台输出：
+            ["www", "jspang", "com"]
+            ["www", "jspang", "com", "shengHongYu"]
+            ["www", "jspang", "com"]
+        </code>
+    </pre>
+</body>
+</html>

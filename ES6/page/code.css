@@ -1,0 +1,12 @@
+ol,ul,div{
+    margin: 0;
+    padding: 0;
+}
+pre{
+    background-color: #282c34;
+    border-radius: 6px;
+}
+code{
+    color: #fff;
+    font-family: 'Microsoft YaHei';
+}

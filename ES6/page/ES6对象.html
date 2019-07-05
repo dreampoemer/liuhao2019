@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6对象</title>
+    <link rel="stylesheet" href="code.css">
+</head>
+<body>
+    <pre>
+        <code>
+            ES5:
+            var name = '李白';
+            var job = 'poemer';
+            var obj = {name:name,job:job};
+
+
+            ES6:
+            let name = '李白';
+            let job = 'poemer';
+            let obj = {name,job};
+
+            *对象的比较----Object.is()跟====的区别：===为同值相等，is为严格相等
+
+            *Object.assign()----合并对象
+            let x = {name:'李白'};
+            let y = {age:28};
+            let z = {sex:'male'};
+            let man = Object.assign(x,y,z);
+            console.log(man);//{name: "李白", age: 28, sex: "male"}
+        </code>
+    </pre>
+</body>
+</html>

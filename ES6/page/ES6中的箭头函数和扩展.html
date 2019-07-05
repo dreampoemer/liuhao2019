@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ES6中的箭头函数和扩展</title>
+    <link rel="stylesheet" href="code.css">
+</head>
+<body>
+    <pre>
+        <code>
+            *1.主动抛出错误
+            function add(a,b=1){
+                if(a == 0){
+                    throw new Error('this is error')
+                }
+                return a+b;
+            }
+            add(0);//this is error
+            add(2);//3
+
+            *严谨模式
+            function add(a,b=1){
+                'use strict'
+                if(a == 0){
+                    throw new Error('This is error');
+                }
+                 return a+b;
+            }
+             
+            console.log(add(1));//报错----此时b=1使用了默认值，又使用了严谨模式，就会有冲突。去掉默认值，则会正常运行
+
+            *ES6的箭头函数
+            let add = （a,b=1）=>{
+                return a+b;
+                console.log('done');//超过一行必须带 ‘{}’
+            }
+        </code>
+    </pre>
+</body>
+</html>

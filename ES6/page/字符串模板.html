@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>字符串模板</title>
+    <link rel="stylesheet" href="code.css">
+</head>
+<body>
+    <ol>
+        <li>字符串拼接
+            <pre>
+                <code>
+                    ES5：
+                    let name = '李白';
+                    let message = '欢迎'+name+'来到ES6 world~';
+                    document.write(message);
+
+                    ES6:
+                    let name = '李白';
+                    let message = '欢迎${name}来到ES6 world~';
+                    document.write(message);
+
+                    同理，ES6对运算的支持。
+                    let a=1;
+                    let b=2;
+                    let result=`${a+b}`;
+                    document.write(result);
+                </code>
+            </pre>
+        </li>
+        <li>对运算的支持
+
+        </li>
+        <li>一些其他操作
+            <pre>
+                <code>
+                    let str = 'aaa';
+                    *判断是否包含某字符串
+                    strs.indexOf(str);
+                    strs.includes(str);
+                    *判断开头是否存在
+                    strs.startWith(str);
+                    *判断结尾是否存在
+                    strs.endWith(str);
+                    *复制字符串
+                    str.repeat(3);//"aaaaaaaaa"
+                </code>
+            </pre>
+        </li>
+    </ol>
+</body>
+</html>

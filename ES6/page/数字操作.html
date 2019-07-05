@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数字操作</title>
+    <link rel="stylesheet" href="code.css">
+</head>
+<body>
+    <pre>
+        <code>
+            <ol>
+                <li>
+                    Number.isFinite( )//只要是数字，不论是浮点型还是整形都会返回true，其他时候会返回false。
+                    console.log(Number.isFinite(11/4));//true
+                    console.log(Number.isFinite('jspang'));//false
+                    console.log(Number.isFinite(NaN));//false
+                    console.log(Number.isFinite(undefined));//false
+                </li>
+                <li>
+                    Number.isNaN(NaN);//true
+                    Number.isNaN(1);//false
+                </li>
+                <li>
+                    Number.isInteger(12.11);//false----判断是否为整数
+                </li>
+                <li>
+                    let num = '9.18';
+                    Number.parseInt(num);//9----整数转换
+                    Number.parseFloat(num);//9.18----浮点型转换
+                </li>
+                <li>
+                    Number.MAX_SAFE_INTEGER----最大安全整数
+                    Number.MIN_SAFE_INTEGER----最小安全整数
+                    Number.isSafeInteger(xxx)----安全整数判断
+                </li>
+            </ol>
+        </code>
+    </pre>
+</body>
+</html>
