@@ -1,27 +1,5 @@
 <template>
-  <div id="app" class="clearfix">
-    <!-- <img src="./assets/logo.png">
-    <transition name="fade" mode="out-in">
-      <router-view ></router-view>
-    </transition>
-    <div>
-        <router-link to='./'>index</router-link>
-        |
-        <router-link to='./hi'>Welcome</router-link>
-        |
-        <router-link to='./d3Charts'>d3Charts</router-link>
-        |
-        <router-link to='./echarts'>eCharts</router-link>
-    </div> -->
-    <!-- 左侧导航 [[-->
-        <leftNav></leftNav>
-    <!-- 左侧导航 ]]-->
-    <!-- 操作区域 [[-->
-    <div class="main">
-        <router-view></router-view>
-    </div>
-    <!-- 操作区域 ]]-->
-  </div>
+  <div id="app" class="clearfix"></div>
 </template>
 
 <script>
