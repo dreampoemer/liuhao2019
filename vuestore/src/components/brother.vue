@@ -1,16 +1,12 @@
 <template>
     <div>
-        pass页面
+        兄弟路由
     </div>
 </template>
 
 <script>
 export default {
-    watch:{
-        $route(to,from){
-            console.log(to)
-        }
-    }
+
 }
 </script>
 

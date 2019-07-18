@@ -4,10 +4,11 @@ import HelloVuex from '@/components/HelloVuex'
 import Book from '@/components/book'
 import Add from '@/components/my'
 import Pass from '@/components/pass'
+import Brother from '@/components/brother'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -22,7 +23,12 @@ export default new Router({
         {
           path: '/book',
           name: 'book',
-          component: Book
+          component: Book,
+          //在配置路由时在路由中写钩子函数
+          beforeEnter(to,from,next){
+            console.log('欢迎来到'+to.name+'页面~');
+            next();
+          }
         },
         {
           path: '/add',
@@ -35,6 +41,22 @@ export default new Router({
           component: Pass
         }
       ]
+    },
+    {
+      path:'/brother',
+      name:'/brother',
+      component:Brother
     }
   ]
-})
+});
+
+//路由全局钩子
+router.beforeEach((to,from,next)=>{
+    console.log('router.js提示：进入路由全局钩子:'+to.name);
+    next();
+});
+router.afterEach(router=>{
+  //after 钩子没有 next 方法，不能改变导航
+
+});
+export default router;
