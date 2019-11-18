@@ -1,0 +1,33 @@
+<!--pages/detail/index.wxml-->
+<view>
+  <view class="movie-bg" style="background:url({{movieDetail.images.large}});"></view>
+  <view class="bg-mask"></view>
+  <view class="detail-wrap">
+    <image src="{{movieDetail.images.small}}" class="detail-image"></image>
+    <view class="movie-detail">
+      <text class="movie-title">{{movieDetail.title}}</text>
+      <view class="movie-origin-title">{{movieDetail.original_title}}</view>
+      <view class="movie-score">{{movieDetail.rating.average}}分</view>
+      <view class="movie-origin-place">{{movieDetail.countries}}</view>
+      <view class="directors">导演：{{movieDetail.directors[0].name}}</view>
+    </view>
+  </view>
+  <view class="movie-summary">{{movieDetail.summary}}</view>
+  <van-cell-group>
+  <van-field
+    value="{{ content }}"
+    placeholder="写点评价吧~"
+    border="{{ false }}"
+    bind:change="onContentChange"
+  />
+  <van-rate value="{{ score }}" bind:change="onScoreChange" />
+  <view>
+    <image class="upload-images" wx:for="{{images}}" wx:key="{{index}}" src="{{item}}"></image>
+  </view>
+  <van-button type="warning" bindtap="uploadImg">上传图片</van-button>
+  <view style="height:15rpx;"></view>
+  <van-button type="danger" bindtap="submit">提交评价</van-button>
+</van-cell-group>
+</view>
+
+
