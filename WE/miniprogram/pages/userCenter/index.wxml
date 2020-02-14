@@ -1,0 +1,15 @@
+<!--pages/userCenter/index.wxml-->
+<!-- 方法一：open-data直接获取用户信息 -->
+<!-- <open-data type="userAvatarUrl"></open-data>
+<open-data type="userNickName"></open-data> -->
+<!-- 方法二：open-type权限通过后获取用户信息 -->
+<view class="user-wrap">
+  <view class="header-img">
+    <image src="{{userAvatarUrl}}" ></image>
+  </view>
+  <view style="color:#fff;">{{userNickName}}</view>
+  <view style="color:#fff;">
+    <text>{{province}}</text> . <text>{{city}}</text>
+  </view>
+</view>
+<button class="get-userInfo" open-type="getUserInfo" bindgetuserinfo="onGotUserInfo" size="large" type="default">获取用户信息</button>

@@ -1,0 +1,30 @@
+.movie-list{
+  height: 300rpx;
+  display: flex;
+  padding: 10px;
+  border-bottom:1px solid #ccc; 
+}
+.movie-img{
+  width: 200rpx;
+  height: 100%;
+}
+.movie-info{
+  flex: 1;
+  font-size: 26rpx;
+  margin-left: 20rpx;
+}
+.movie-title{
+  color: #666;
+  font-size: 40rpx;
+  font-weight: bolder;
+}
+.movie-score{
+  color: #faaf00;
+}
+.assess-button{
+  display: inline-block;
+  height: 60rpx;
+  background-color: #f00;
+  color: #fff;
+  margin: 10rpx 0 0 0;
+}
