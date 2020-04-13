@@ -12,15 +12,13 @@
     props:[''],
     data () {
       return {
-          loginUserName:''
+          loginUserName:'libai'
       };
     },
     filters: {},
     components: {},
     computed: {
-        // loginUserName(){
-        //     return this.$route.params.username
-        // }
+
     },
     beforeMount() {},
     mounted() {},

@@ -72,7 +72,14 @@ const router = new Router({
       //路由独享的守卫
       beforeEnter:(to, from, next) =>{
         //...
+        console.log(to, from)
+        next();
       }
+    },
+    {
+      path: '/alive',
+      name: 'Alive',
+      component: () => import('@/views/keepAlive/index')
     }
   ]
 });

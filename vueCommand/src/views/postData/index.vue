@@ -6,7 +6,9 @@
             <el-tabs v-model="activeName" type="card" @tab-click="handleClick">
                 <el-tab-pane label="父组件向子组件传值" name="first">
                     <p class="detail">详情看@/components/props.vue组件</p>
+                    <!-- 子组件props [[ -->
                     <props :dataFromParent="filmDetail"></props>
+                    <!-- 子组件props ]] -->
                     <div class="step-wrap">
                         <el-steps :active="active" direction="vertical" finish-status="success">
                             <el-step title="步骤 1" description="子组件在props中创建一个属性，用以接收父组件传过来的值"></el-step>
@@ -21,7 +23,7 @@
                 <!-- tab2 [[ -->
                 <el-tab-pane label="子组件向父组件传值" name="second">
                     <p class="detail">详情看@/components/emit.vue组件</p>
-                    <child v-on:listenToChildrenEvent="showMsgFromChild"></child>
+                    <child :listenToChildrenEvent="showMsgFromChild"></child>
                     <p class="tips">{{ msgFromChild }}</p>
                     <div>
                         <el-steps :active="active" finish-status="success">

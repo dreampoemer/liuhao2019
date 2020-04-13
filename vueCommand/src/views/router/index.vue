@@ -21,8 +21,7 @@
                 </el-timeline-item>
                 <el-timeline-item timestamp="嵌套路由" placement="top">
                     <el-card>
-                        <router-link to="router/page1">嵌套路由页面</router-link>
-                        <router-view class="container"></router-view>
+                        <button @click="toNextPage">嵌套路由页面</button>
                     </el-card>
                 </el-timeline-item>
                 <el-timeline-item timestamp="命名路由" placement="top">
@@ -71,6 +70,11 @@
         goToPage2(){
             this.currentIndex = 2
         },
+        toNextPage(){
+            this.$router.push({
+                path: "router/page1"
+            });
+        }
     },
     watch: {
 

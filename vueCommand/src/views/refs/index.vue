@@ -1,6 +1,10 @@
 <template>
   <div>
     <common-header @getDate="getDate"></common-header>
+    <dl>
+        <dd>1.父组件访问子组件，使用$children或者$refs</dd>
+        <dd>2.子组件访问父组件，使用$parent</dd>
+    </dl>
     <div class="info">
         <el-tabs :tab-position="tabPosition" style="height: 200px;">
             <el-tab-pane label="1.ref使用在父组件上">
