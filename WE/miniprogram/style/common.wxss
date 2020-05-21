@@ -1,5 +1,0 @@
-/* 覆盖小程序默认user agent 样式 */
-
-button:not([size='mini']) {
-  width: 100%;
-}
