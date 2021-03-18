@@ -9,7 +9,7 @@
 <body>
     <!-- v-if--v-else 用来判断是否加载html的DOM-->
     <!-- v-show 只改变DOM的display的值 -->
-    <h1>v-for&&v-show指令</h1>
+    <h1>v-if&&v-show指令</h1>
     <hr>
     <div id="app">
         <div v-if="isLoginIn">你好，{{userName}}！</div>
@@ -20,7 +20,7 @@
         var app = new Vue({
             el:'#app',
             data:{
-               isLoginIn:true,
+               isLoginIn:false,
                userName:"farewell"
             }
         });

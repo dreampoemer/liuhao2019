@@ -19,7 +19,7 @@
         点击选择class：<input type="checkbox" v-model="isOk"><label for="">{{isOk}}</label>   
         <div :class="isOk?classA:classB">绑定class的三目运算</div>
         <div :class="[classA,classB]">绑定class的数组</div>
-        <img v-bind:src="imgSrc" width="200px"></img>
+        <img v-bind:src="imgSrc" width="200px"/>
     </div>
 </body>
 <script src="../assets/js/vue.js"></script>

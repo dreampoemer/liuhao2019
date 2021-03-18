@@ -22,7 +22,7 @@
     }
     Vue.directive("liuhao",{
         bind:function(el,binding){//被绑定
-            console.log("1--bind");
+            console.log("1--bind","binding.value="+binding.value);
             el.style="color:"+ binding.value;
         },
         inserted:function(){//绑定插入到节点
@@ -34,10 +34,10 @@
         componentUpdated:function(el,binding){//组件更新完成
             let nowValue = parseInt(el.innerText);
             console.log("4--componentUpdated");
-            //TODO 判断逻辑大于7代码未执行
+            
             if(nowValue < 4){
                 el.style = "color:red";
-            }else if(4 <= nowValue < 7){
+            }else if(nowValue>=4 && nowValue < 7){
                 el.style = "color:green";
             }else{
                 el.style = "color:yellow";

@@ -19,12 +19,16 @@
 <script src="../assets/js/vue.js"></script>
 <script>
     function updated () {
+        console.log('forceUpdate')
         ui.$forceUpdate();
     }
 
     function refresh(){
         ui.msg = "我更改了自定义拓展组建的内容"; 
         ui.$nextTick(function(){
+           setTimeout(function(){
+                ui.msg="我又更改了~";
+           },5000);
             console.log("数据更新回调");
         });
     }
